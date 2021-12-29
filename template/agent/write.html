@@ -1,0 +1,19 @@
+{% set title = "직원 등록" %}
+{% extends "layout/base.html" %}
+
+{% block content -%}
+    <form action="" method="post">
+        <table class="table table-bordered">
+            <tr>
+                <th>사번</th>
+                <td><input type="text" name="cstno" class="form-control"/></td>
+            </tr>
+            <tr>
+                <th>직원명</th>
+                <td><input type="text" name="name" class="form-control"/></td>
+            </tr>
+        </table>
+        <button class="btn btn-primary">저장</button>
+    </form>
+
+{% endblock %}
