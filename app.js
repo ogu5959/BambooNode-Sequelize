@@ -2,11 +2,15 @@ const express    = require('express')
 const logger     = require('morgan')
 const nunjucks   = require('nunjucks')
 const bodyParser = require('body-parser')
+const db         = require('./models')
 
 class App {
 
     constructor() {
         this.app = express()
+
+        // DB Connection
+        this.dbConnection();
 
         // ViewEngine
         this.setViewEngine()
@@ -22,6 +26,18 @@ class App {
 
         // 500 ErrorHandler
         this.errorHandler()
+    }
+
+    // DB Connection
+    dbConnection(){
+        // DB authentication
+        db.sequelize.authenticate()
+        .then(() => {
+            console.log('Connection has been established successfully.');
+        })
+        .catch(err => {
+            console.error('Unable to connect to the database:', err);
+        });
     }
 
     // ViewEngine
