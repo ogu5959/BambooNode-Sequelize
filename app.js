@@ -33,11 +33,16 @@ class App {
         // DB authentication
         db.sequelize.authenticate()
         .then(() => {
-            console.log('Connection has been established successfully.');
+            console.log('Connection has been established successfully.')            
+            // 모델 동기화
+            return db.sequelize.sync()
+        })
+        .then(() => {
+            console.log('DB Sync complete.')
         })
         .catch(err => {
-            console.error('Unable to connect to the database:', err);
-        });
+            console.error('Unable to connect to the database:', err)
+        })
     }
 
     // ViewEngine
