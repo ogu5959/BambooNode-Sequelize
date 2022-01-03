@@ -1,0 +1,22 @@
+{% set title = "상세페이지" %}
+{% extends "layout/base.html" %}
+ 
+{% block content -%}
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            {{ user.cstno }}
+        </div>
+        <div class="panel-body">
+            <div style="padding-bottom: 10px">
+                {{ user.name }}
+            </div>
+
+            {{ user.description }}
+
+        </div>
+    </div>
+
+    <a href="/agent/list" class="btn btn-default">목록으로</a>
+    <a href="/agent/list/edit/{{ user.cstno }}" class="btn btn-primary">수정</a>
+
+{% endblock %}

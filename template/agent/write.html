@@ -6,11 +6,13 @@
         <table class="table table-bordered">
             <tr>
                 <th>사번</th>
-                <td><input type="text" name="cstno" class="form-control"/></td>
+                <td><input type="text" name="cstno" class="form-control"
+                    value="{{ user.cstno }}"/></td>
             </tr>
             <tr>
                 <th>직원명</th>
-                <td><input type="text" name="name" class="form-control"/></td>
+                <td><input type="text" name="name" class="form-control"
+                    value="{{ user.name }}"/></td>
             </tr>
         </table>
         <button class="btn btn-primary">저장</button>

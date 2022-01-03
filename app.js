@@ -35,7 +35,7 @@ class App {
         .then(() => {
             console.log('Connection has been established successfully.')            
             // 모델 동기화
-            return db.sequelize.sync()
+            //return db.sequelize.sync()
         })
         .then(() => {
             console.log('DB Sync complete.')

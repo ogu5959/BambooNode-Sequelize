@@ -5,18 +5,27 @@
     <table class="table table-bordered table-hover">
         <tr>
             <th>사번</th>
-            <th>생성일</th>
+            <th>이름</th>
             <th>삭제</th>
         </tr>
+        {% for users in userList %}
         <tr>
-            <td>사번</td>
             <td>
-                2021-12-22
+                <a href="/agent/list/detail/{{ users.cstno }}">
+                    {{ users.cstno }}
+                </a>
             </td>
             <td>
-                <a href="#" class="btn btn-danger">삭제</a>
+                {{ users.name }}
+            </td>
+            <td>
+                <a href="/agent/list/delete/{{ users.cstno }}" class="btn btn-danger"
+                 onclick="return confirm('삭제하시겠습니까?')">
+                    삭제
+                </a>
             </td>
         </tr>
+        {% endfor %}
     </table>
 
     <a href="/agent/list/write" class="btn btn-default">등록</a>

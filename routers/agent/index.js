@@ -24,4 +24,12 @@ router.get('/list/write', ctrl.get_list_write)
 
 router.post('/list/write', ctrl.post_list_write)
 
+router.get('/list/detail/:cstno', ctrl.get_list_detail)
+
+router.get('/list/edit/:cstno', ctrl.get_list_edit)
+
+router.post('/list/edit/:cstno', ctrl.post_list_edit)
+
+router.get('/list/delete/:cstno', ctrl.get_list_delete)
+
 module.exports = router
